@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock title %}
+{% block content %}
+<main>
+    <!-- breadcrumb area start -->
+    <section class="breadcrumb-area pt-140 pb-140 bg_img" data-background="/static/images/bg/breadcrumb-bg-1.jpeg"
+        data-overlay="dark" data-opacity="5">
+        <div class="shape shape__1"><img src="/static/images/shape/breadcrumb-shape-1.png" alt=""></div>
+        <div class="shape shape__2"><img src="/static/images/shape/breadcrumb-shape-2.png" alt=""></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <h2 class="page-title">Get in touch</h2>
+                    <div class="cafena-breadcrumb breadcrumbs">
+                        <ul class="list-unstyled d-flex align-items-center justify-content-center">
+                            <li class="cafenabcrumb-item duxinbcrumb-begin">
+                                <a href="{% url 'home' %}"><span>Home</span></a>
+                            </li>
+                            <li class="cafenabcrumb-item duxinbcrumb-end">
+                                <span>contact</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb area end -->
+
+    <!-- contact area start -->
+    <div class="contact__area position-relative pt-120 pb-120">
+        <span class="shape shape__1 position-absolute"><img src="/static/images/shape/hero-shape-2-1.png" alt=""></span>
+        <span class="shape shape__2 position-absolute"><img src="/static/images/shape/hero-shape-2-2.png" alt=""></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="contact__wrapper">
+                        <div class="row mt-none-30">
+                            <div class="col-lg-4 col-md-6 mt-30">
+                                <div class="contact-info d-flex align-items-center justify-content-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <img src="/static/images/icons/ci-1.png" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="title">Contact us</h3>
+                                        <a href="mailto:Israfilsupol836@gmail.com">info@tweakbeverages.com</a>
+                                        <a href="tel:+91 22 25677099">+91 22 25677099</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30">
+                                <div class="contact-info d-flex align-items-center justify-content-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <img src="/static/images/icons/ci-2.png" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="title">Our Location</h3>
+                                        <p>Office No.116, Ecstasy Business Park, City Of Joy, JSD Road, Mulund (W),
+                                            Mumbai- 400080</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-30">
+                                <div class="contact-info d-flex align-items-center justify-content-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <img src="/static/images/icons/ci-3.png" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="title">Opening HOurs</h3>
+                                        <p>Mon - Sat (8:00 - 6:00)</p>
+                                        <p>Sunday - Closed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="contact__form mt-10">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2">
+                                            <div class="form-group col-lg-6">
+                                                <label class="control-label" for="fname">First Name:</label>
+                                                <input type="text" class="form-control" required id="fname"
+                                                    placeholder="Enter Name" name="name">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label class="control-label" for="email">Email Address:</label>
+                                                <input type="email" class="form-control" required id="email"
+                                                    placeholder="Enter email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="email">Phone number:</label>
+                                            <div class="col-sm-12">
+                                                <input type="tel" maxlength="10" required name="number"
+                                                    placeholder="phone number" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="comment">message:</label>
+                                            <div class="col-sm-12">
+                                                <textarea name="message" class="form-control" rows="5"
+                                                    id="comment"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10 mt-5">
+                                                <button type="submit" class="btn site-btn">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact area end -->
+
+    <!-- map -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.4021991056075!2d72.95704326479637!3d19.177627703753874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8e4e3b321c9%3A0x3d967d37f3ed982f!2sTweak%20-%20Tea%20%26%20Coffee%20Vending%20Machine!5e0!3m2!1sen!2sin!4v1639201099678!5m2!1sen!2sin"
+        width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+</main>
+{% endblock content %}

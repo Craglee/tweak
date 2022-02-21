@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<main>
+    <!-- hero area start -->
+    <section class="hero__area hero__area--2 position-relative custom-padding">
+        <span class="shape shape__1 position-absolute"><img src="/static/images/shape/hero-shape-2-1.png" alt=""></span>
+        <span class="shape shape__2 position-absolute"><img src="/static/images/shape/hero-shape-2-2.png" alt=""></span>
+        <div class="container-fluid custom-width">
+            <div class="row mm-reverse">
+                <div class="col-xl-6 col-lg-7 align-self-center">
+                    <div class="hero__content hero__content--2 position-relative">
+                        <h1 class="title mb-10">Tweak <br> Beverages</h1>
+                        <p>Tea Coffee Vending Machine Manufacturer.</p>
+                        <div class="btns mt-45 d-flex align-items-center justify-content-start">
+                            <a href="{% url 'shop' %}" class="site-btn site-btn__2">Explore Items</a>
+                            <a href="{% url 'about' %}" class="site-btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5">
+                    <div class="hero__thumb hero__thumb--2 position-relative">
+                        <img src="/static/images/hero/hero-img-2-1.png" alt="img" class="cup">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero area end -->
+
+    <!-- feature slider start -->
+    <div class="feature__area feature__area--2 pb-115">
+        <div class="container-fluid custom-width">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="feature__wrapper">
+                        <div class="row mt-none-50">
+                            <div class="col-xl-3 col-lg-6 col-md-6 mt-50">
+                                <div class="feature__item feature__item--2">
+                                    <span class="year">1999</span>
+                                    <div class="content mt-20">
+                                        <h2 class="title mb-10">How we Started</h2>
+                                        <p>C.B.Shah & Co. is a Mumbai, based company and has been successfully catering to the domestic ans overseas market with its Innovative and high quality Tea and Coffee products.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 mt-50">
+                                <div class="feature__item feature__item--2">
+                                    <span class="year">2002</span>
+                                    <div class="content mt-20">
+                                        <h2 class="title">Coffee Beans</h2>
+                                        <p>Curabitur semper erat a lacusey <br> sedn consequat, sit amet quamey.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 mt-50">
+                                <div class="feature__item feature__item--2">
+                                    <span class="year">2014</span>
+                                    <div class="content mt-20">
+                                        <h2 class="title">Family Work</h2>
+                                        <p>Curabitur semper erat a lacusey <br> sedn consequat, sit amet quamey.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 mt-50">
+                                <div class="feature__item feature__item--2">
+                                    <span class="year">2019</span>
+                                    <div class="content mt-20">
+                                        <h2 class="title">Bangladeshy Grades</h2>
+                                        <p>Curabitur semper erat a lacusey <br> sedn consequat, sit amet quamey.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- feature slider end -->
+
+        <!-- top grade area start -->
+        <section class="topgrade__area topgrade__area--2 grey-bg pt-115 pb-115 position-relative">
+            <span class="shape shape__1 position-absolute"><img src="/static/images/shape/top-grade-shape-2-1.png"
+                    alt=""></span>
+            <span class="shape shape__2 position-absolute"><img src="/static/images/shape/top-grade-shape-2-2.png"
+                    alt=""></span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 text-center">
+                        <div class="section-heading section-heading__black mb-55">
+                            <span class="sub-title">top categories</span>
+                            <h2 class="title">Tweak Categories</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-5 mt-none-30">
+                    {% for categories in links %}
+                    <div class="col  {{categories.margin_top}}">
+                        <div class="topgrade__item topgrade__item--2 text-center">
+                            <div class="thumb">
+                                <img src="{{categories.category_image.url}}" alt="">
+                                <span class="count">{{categories.id}}</span>
+                            </div>
+                            <div class="content mt-20">
+                                <h2 class="title">{{categories.name}}</h2>
+                                <p>{{categories.category_description}}</p>
+                                <a href="{{categories.get_url_product}}" class="btn site-btn">View Product</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- top grade area end -->
+
+    <!-- about area start -->
+    <section class="about__area about__area--2 grey-bg position-relative pt-120 pb-130">
+        <span class="shape shape__1 position-absolute"><img src="/static/images/shape/about-shape-2-1.png"
+                alt=""></span>
+        <span class="shape shape__2 position-absolute"><img src="/static/images/shape/about-shape-2-2.png"
+                alt=""></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-7">
+                    <div class="about__left about__left--2 position-relative">
+                        <img class="big big-animation-img" src="/static/images/about/about-img-2-1.png" alt="img">
+                        <img class="small position-absolute" src="/static/images/about/about-img-2-2.png" alt="img">
+                    </div>
+                </div>
+                <div class="col-xl-6 offset-xl-1">
+                    <div class="about__right about__right--2 pl-45 pt-45">
+                        <div class="section-heading section-heading__black">
+                            <span class="sub-title">about us</span>
+                            <h2 class="title mb-25">one of the best Tea Premix Manufacturer in your home town</h2>
+                            <p>C.B.Shah & Co. is a Mumbai, based company and has been successfully catering to the
+                                domestic ans overseas market with its Innovative and high quality Tea and Coffee
+                                products.</p>
+                            <p>Today TWEAK TEA AND COFFEE has become more than just a household name. We have
+                                continuously strived to create the brand value by combing Quality and Innovation.</p>
+                        </div>
+                        <a href="{% url 'contact' %}" class="site-btn my-3">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about area end -->
+
+    <!-- populer menu area start -->
+    <section class="popular-menu__area grey-bg position-relative pb-120 section-2">
+        <span class="shape shape__1 position-absolute"><img src="/static/images/shape/menu-shape-1.png" alt=""></span>
+        <span class="shape shape__2 position-absolute"><img src="/static/images/shape/menu-shape-2.png" alt=""></span>
+        <span class="shape shape__3 position-absolute"><img src="/static/images/shape/menu-shape-3.png" alt=""></span>
+        <span class="shape shape__4 position-absolute"><img src="/static/images/shape/menu-shape-4.png" alt=""></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <div class="section-heading section-heading__black mb-40">
+                        <span class="sub-title">Special menu</span>
+                        <h2 class="title">Tweak Popular Menu</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="product-card">
+                <div class="col-sm-12">
+                    <div id="products" class="owl-carousel">
+                        {% for products in product %}
+                        <div class="item">
+                            <div class="box">
+                                <h2 class="product-name">{{products.product_name}}</h2>
+                                <a href="{{products.get_url}}" class="view">view</a>
+
+                                <img src="{{products.product_image_1.url}}" class="product-img" alt="">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btns mt-45 d-flex align-items-center justify-content-center">
+            <a href="{% url 'shop' %}" class="site-btn site-btn__2">Explore All Products</a>
+        </div>
+    </section>
+    <!-- populer menu area end -->
+
+    <!-- testimonail area start -->
+    <!-- <section class="testimonial__area pt-115 pb-110 position-relative bg_img" data-overlay="dark" data-opacity="5"
+        data-background="/static/images/bg/testimonial-bg-2.jpeg">
+    </section>  -->
+    <!-- testimonail area end -->
+</main>
+{% endblock content %}

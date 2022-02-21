@@ -1,0 +1,376 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+
+    <!--========= Required meta tags =========-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>Tweak - Tweak Bevrages | {% block title %}{% endblock title %}</title>
+
+    <!--====== Favicon ======-->
+    <link rel="shortcut icon" href="{% static 'images/logo/favicon.ico' %}" type="images/x-icon" />
+    <!--====== Extra Link ======-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!--====== CSS Here ======-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightcase.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"
+      style="position: absolute; z-index: 1000; width: 100%;">
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error: {% endif %}
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- preloader  -->
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="T" class="letters-loading">
+                        T
+                    </span>
+                    <span data-text-preloader="W" class="letters-loading">
+                        W
+                    </span>
+                    <span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                    <span data-text-preloader="K" class="letters-loading">
+                        K
+                    </span>
+                </div>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- header start -->
+    <header class="site-header">
+        <div class="header-top header-top__2">
+            <div class="container-fluid custom-width">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12 align-self-center">
+                        <div class="header-top__left d-flex align-items-center">
+                            <div class="logo">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'images/logo/logo.png' %}" width="80" height="80" alt="img">
+                                </a>
+                            </div>
+                            <ul class="header-top__infos pl-75 list-unstyled d-flex align-items-center mb-0">
+                                <li><a href="tel:912225677099"><i class="fas fa-phone-square"></i>+91 22 25677099</a>
+                                </li>
+                                <li><i class="fa fa-map-marker-alt"></i>Bhiwandi, Thane- 421302</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12  align-self-center">
+                        <div
+                            class="header-top__right header-top__right--2 d-flex justify-content-xl-end justify-content-center align-items-center">
+                            <div
+                                class="social-links social-links__2 d-flex align-items-center justify-content-md-start justify-content-center">
+                                <a href="https://www.facebook.com/TWEAK-Tea-Coffee-426695867353919/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://twitter.com/TweakTeaCoffee" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/company/tweak-beverages" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/tweakbeverages/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <a href="{% static 'Tweak Brochure.pdf' %}" target="_blank" class="site-btn">Download Broucher <i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-area menu-area-2 custom-padding">
+            <div class="container-fluid custom-width">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-9 col-6">
+                        <div class="logo mm-only d-md-block d-lg-none">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'images/logo/logo.png' %}" width="80" height="80" alt="img">
+                            </a>
+                        </div>
+                        <div class="main-menu main-menu__2">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li class="menu-item-has-children {% if '/' == request.path %}active{% endif %}"><a
+                                            href="{% url 'home' %}">Home</a></li>
+                                    <li class="{% if '/about' == request.path %}active{% endif %}"><a
+                                            href="{% url 'about' %}">About</a></li>
+                                    <li class="{% if '/shop' == request.path %}active{% endif %}"><a
+                                            href="{% url 'shop' %}">Product</a>
+                                        <ul class="sub-menu">
+                                            {% for link in links %}
+                                            <li><a href="{{link.get_url_product}}">{{link.name}}</a>
+                                                <ul class="sub-menu small_sub_menu">
+                                                    {% for products in products_link %}
+                                                    {% if products.product_category.id == link.id %}
+                                                    <li><a href="{{products.get_url}}">{{products.product_name}}</a>
+                                                    </li>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li class="{% if '/event' == request.path %}active{% endif %}"><a
+                                            href="{% url 'enquiry' %}">Export Inquiry</a></li>
+                                    <li class="{% if '/contact' == request.path %}active{% endif %}"><a
+                                            href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-3 col-6 align-self-center">
+                        <div class="menu-area__right menu-area__right--2 d-flex justify-content-end align-items-center">
+                            <div class="hamburger-trigger item">
+                                <i class="far fa-bars"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- side info for mobile view -->
+    <aside class="side-info-wrapper mm-only">
+        <nav>
+            <div class="nav" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="menu-tab-1-tab" data-bs-toggle="tab" href="#menu-tab-1" role="tab"
+                    aria-controls="menu-tab-1" aria-selected="true">Menu</a>
+                <a class="nav-link" id="menu-tab-2-tab" data-bs-toggle="tab" href="#menu-tab-2" role="tab"
+                    aria-controls="menu-tab-2" aria-selected="false">Info</a>
+            </div>
+        </nav>
+        <div class="side-info__wrapper d-flex align-items-center justify-content-between">
+            <div class="side-info__logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/logo/logo.png' %}" width="80" height="80" alt="logo">
+                </a>
+            </div>
+            <div class="side-info__close">
+                <a href="javascript:void(0);"><i class="fal fa-times"></i></a>
+            </div>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="menu-tab-1" role="tabpanel" aria-labelledby="menu-tab-1-tab">
+                <div class="mobile-menu"></div>
+            </div>
+            <div class="tab-pane fade" id="menu-tab-2" role="tabpanel" aria-labelledby="menu-tab-2-tab">
+                <div class="side-info">
+                    <div class="contact__info--wrapper mt-15">
+                        <h4 class="title mb-10">Contact us</h4>
+                        <ul class="contact__info list-unstyled">
+                            <li>
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                <p>Office No.116, Ecstasy Business Park, City Of Joy, JSD Road, Mulund (W), Mumbai-
+                                    400080. Factory Address: Gala No 55, Om Sainath Complex, Dapode, Bhiwandi, Thane-
+                                    421302</p>
+                            </li>
+                            <li>
+                                <span><i class="fas fa-phone"></i></span>
+                                <p>+91 22 25677099</p>
+                            </li>
+                            <li>
+                                <span><i class="fas fa-envelope-open-text"></i></span>
+                                <p>info@tweakbeverages.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social-links mt-20 d-flex justify-content-start align-items-center">
+                        <a href="https://www.facebook.com/TWEAK-Tea-Coffee-426695867353919/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/TweakTeaCoffee" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/tweak-beverages" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/tweakbeverages/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- side info for desktop view -->
+    <aside class="side-info-wrapper show-all">
+        <div class="side-info__wrapper d-flex align-items-center justify-content-between">
+            <div class="side-info__logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/logo/logo.png' %}" width="80" height="80" alt="logo">
+                </a>
+            </div>
+            <div class="side-info__close">
+                <a href="javascript:void(0);"><i class="fal fa-times"></i></a>
+            </div>
+        </div>
+        <div class="side-info">
+            <div class="contact__info--wrapper mt-15">
+                <h4 class="title mb-10">Contact us</h4>
+                <ul class="contact__info list-unstyled">
+                    <li>
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <p>Office No.116, Ecstasy Business Park, City Of Joy, JSD Road, Mulund (W), Mumbai- 400080.
+                            Factory Address: Gala No 55, Om Sainath Complex, Dapode, Bhiwandi, Thane- 421302</p>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-phone"></i></span>
+                        <p>+91 22 25677099</p>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-envelope-open-text"></i></span>
+                        <p>info@tweakbeverages.com</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="social-links mt-20 d-flex justify-content-start align-items-center">
+                <a href="https://www.facebook.com/TWEAK-Tea-Coffee-426695867353919/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/TweakTeaCoffee" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/tweak-beverages" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/tweakbeverages/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    {% block content %}{% endblock content %}
+
+
+    <footer class="site-footer dark-bg position-relative">
+        <div class="footer__top">
+            <a href="#" class="go-top go-top__white position-absolute d-flex align-items-center justify-content-center">
+                <i class="fal fa-long-arrow-up"></i>
+            </a>
+        </div>
+        <div class="footer__middle mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="footer__logo--content">
+                            <img class="mb-15" src="{% static 'images/logo/logo.png' %}" width="80" height="80" style="filter: invert(1);" alt="">
+                            <p><img src="{% static 'images/icons/ft-map-marker.png' %}" alt=""> Office No.116, Ecstasy
+                                Business Park, City Of Joy, JSD Road, Mulund (W), Mumbai- 400080.
+                                Factory Address: Gala No 55, Om Sainath Complex, Dapode, Bhiwandi, Thane- 421302</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-self-end">
+                        <div class="container-fluid p-0">
+                            <div class="row justify-content-start mb-3">
+                                <div class="col col-lg-6 col-sm-12 mt-10">
+                                    <div class="footer__widget footer__info">
+                                        <div class="item d-flex align-items-center justify-content-start">
+                                            <img src="{% static 'images/icons/ft-phone.png' %}" alt="">
+                                            <span>Phone :</span>
+                                            <a href="tel:88019339702520">+91 22 25677099</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-6 col-sm-12 mt-10 pl-45">
+                                    <div class="footer__widget footer__info">
+                                        <div class="item d-flex align-items-center justify-content-start w-100">
+                                            <span>Email :</span>
+                                            <p>info@tweakbeverages.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-links d-flex align-items-center justify-content-lg-end">
+                            <a href="https://www.facebook.com/TWEAK-Tea-Coffee-426695867353919/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/TweakTeaCoffee" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/tweak-beverages" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/tweakbeverages/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__menu-area mt-30 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="footer__menu">
+                            <nav>
+                                <ul>
+                                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'shop' %}">Shop</a></li>
+                                    <li><a href="{% url 'enquiry' %}">Event</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-center text-lg-end">
+                        <a href="#" class="go-top go-top__bottom">
+                            <span>go top</span>
+                            <i class="fal fa-long-arrow-up"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--========= JS Here =========-->
+    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/lightcase.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+    <script src="{% static 'js/vanilla-tilt.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/scrollwatch.js' %}"></script>
+    <script src="{% static 'js/sticky-header.js' %}"></script>
+    <script src="{% static 'js/waypoint.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfpGBFn5yRPvJrvAKoGIdj1O1aO9QisgQ"></script>
+    <script src="{% static 'js/jquery-ui-slider-range.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Product-Detail{% endblock title %}
+{% block content %}
+<main>
+    <!-- breadcrumb area start -->
+    <section class="breadcrumb-area pt-140 pb-140 bg_img" data-background="/static/images/bg/breadcrumb-bg-1.jpeg"
+        data-overlay="dark" data-opacity="5">
+        <div class="shape shape__1"><img src="/static/images/shape/breadcrumb-shape-1.png" alt=""></div>
+        <div class="shape shape__2"><img src="/static/images/shape/breadcrumb-shape-2.png" alt=""></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <h2 class="page-title">Product Details</h2>
+                    <div class="cafena-breadcrumb breadcrumbs">
+                        <ul class="list-unstyled d-flex align-items-center justify-content-center">
+                            <li class="cafenabcrumb-item duxinbcrumb-begin">
+                                <a href="{% url 'home' %}"><span>Home</span></a>
+                            </li>
+                            <li class="cafenabcrumb-item duxinbcrumb-end">
+                                <span>Product</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb area end -->
+
+    <!-- product details area start -->
+    <div class="product-details__area pt-120 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="product-details__wrapper">
+                        <div class="pd-img justify-content-center">
+                            <div class="tab-content" id="pdContent">
+
+                                <div class="tab-pane fade show active" id="pd-1" role="tabpanel"
+                                    aria-labelledby="pd-1-tab">
+                                    <div class="big-img">
+                                        {% if single_product.product_image_1 %}
+                                        <img src="{{single_product.product_image_1.url}}" alt="">
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="pd-2" role="tabpanel" aria-labelledby="pd-2-tab">
+                                    <div class="big-img">
+                                        {% if single_product.product_image_2 %}
+                                        <img src="{{single_product.product_image_2.url}}" alt="">
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="pd-3" role="tabpanel" aria-labelledby="pd-3-tab">
+                                    <div class="big-img">
+                                        {% if single_product.product_image_3 %}
+                                        <img src="{{single_product.product_image_3.url}}" alt="">
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="pd-4" role="tabpanel" aria-labelledby="pd-4-tab">
+                                    <div class="big-img">
+                                        {% if single_product.product_image_4 %}
+                                        <img src="{{single_product.product_image_4.url}}" alt="">
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="pd-5" role="tabpanel" aria-labelledby="pd-5-tab">
+                                    <div class="big-img">
+                                        {% if single_product.product_image_5 %}
+                                        <img src="{{single_product.product_image_5.url}}" alt="">
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="pd-6" role="tabpanel" aria-labelledby="pd-6-tab">
+                                    <div class="big-img">
+                                        {% if single_product.product_image_6 %}
+                                        <img src="{{single_product.product_image_6.url}}" alt="">
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="pd-tab justify-content-center">
+                            <nav>
+                                <div class="nav" id="shop-filter-tab" role="tablist">
+                                    {% if single_product.product_image_1 %}
+                                    <a class="nav-link active" id="pd-1-tab" data-bs-toggle="tab" href="#pd-1"
+                                        role="tab" aria-controls="pd-1" aria-selected="true">
+                                        <img src="{{single_product.product_image_1.url}}" alt="">
+                                    </a>
+                                    {% endif %}
+                                    {% if single_product.product_image_2 %}
+                                    <a class="nav-link" id="pd-2-tab" data-bs-toggle="tab" href="#pd-2" role="tab"
+                                        aria-controls="pd-2" aria-selected="true">
+                                        <img src="{{single_product.product_image_2.url}}" alt="">
+                                    </a>
+                                    {% endif %}
+                                    {% if single_product.product_image_3 %}
+                                    <a class="nav-link" id="pd-3-tab" data-bs-toggle="tab" href="#pd-3" role="tab"
+                                        aria-controls="pd-3" aria-selected="true">
+                                        <img src="{{single_product.product_image_3.url}}" alt="">
+                                    </a>
+                                    {% endif %}
+                                    {% if single_product.product_image_4 %}
+                                    <a class="nav-link" id="pd-4-tab" data-bs-toggle="tab" href="#pd-4"
+                                        role="tab" aria-controls="pd-4" aria-selected="true">
+                                        <img src="{{single_product.product_image_4.url}}" alt="">
+                                    </a>
+                                    {% endif %}
+                                    {% if single_product.product_image_5 %}
+                                    <a class="nav-link" id="pd-5-tab" data-bs-toggle="tab" href="#pd-5" role="tab"
+                                        aria-controls="pd-5" aria-selected="true">
+                                        <img src="{{single_product.product_image_5.url}}" alt="">
+                                    </a>
+                                    {% endif %}
+                                    {% if single_product.product_image_6 %}
+                                    <a class="nav-link" id="pd-6-tab" data-bs-toggle="tab" href="#pd-6" role="tab"
+                                        aria-controls="pd-6" aria-selected="true">
+                                        <img src="{{single_product.product_image_6.url}}" alt="">
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="product-details__content">
+                        <div class="tr-wrapper d-flex align-items-center justify-content-between">
+                            <h2 class="title">{{single_product.product_name}}</h2>
+                        </div>
+                        <p>{{single_product.product_description}}</p>
+                        {% if single_product.product_ingridient %}
+                        <p>
+                            <b>Ingridient:</b>
+                            <br>
+                            <i>{{single_product.product_ingridient}}</i>
+                        </p>
+                        {% endif %}
+
+                        {% if single_product.product_highlights %}
+                        <p>
+                            <b>Highlights:</b>
+                            <br>
+                            <i>{{single_product.product_highlights}}</i>
+                        </p>
+                        {% endif %}
+
+                        {% if single_product.product_features %}
+                        <p>
+                            <b>Features:</b>
+                            <br>
+                            <i>{{single_product.product_features}}</i>
+                        </p>
+                        {% endif %}
+                        <div class="mt-3">
+                            <table>
+                                <tr>
+                                    <th colspan="3">Information for {{single_product.product_name}}</th>
+                                </tr>
+                                {% for information in product_information %}
+                                {% if information.product.id == single_product.id %}
+                                <tr>
+                                    {% if information.spec_info %}
+                                    <td>{{information.spec_info}}</td>
+                                    {% endif %}
+
+                                    {% if information.specs %}
+                                    <td>{{information.specs}}</td>
+                                    {% endif %}
+
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product details area end -->
+
+    <!-- releted products area start -->
+    <div class="releted-product__area pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <h2 class="rp-title mb-30">
+                        More Product
+                    </h2>
+                </div>
+            </div>
+            <div class="row mt-none-30">
+                {% for products in products_link %}
+                <div
+                    class="col-xl-3 col-lg-6 col-md-6 mt-30 {% if single_product.id == products.id %}d-none{% endif %}">
+                    <div class="pp__item pp__item--2 text-center pt-20 pb-20">
+                        <div class="pp__action pp__action--2 d-flex align-items-center justify-content-center">
+                            <div class="view d-flex align-items-center justify-content-center">
+                                <a href="{{products.get_url}}"><i class="fal fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="pp__thumb pp__thumb--2 mt-35">
+                            {% if products.product_image_1 %}
+                            <img class="default" src="{{products.product_image_1.url}}" alt="">
+                            {% endif %}
+                            {% if products.product_image_2 %}
+                            <img class="on-hover" src="{{products.product_image_2.url}}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="pp__content pp__content--2 mt-25">
+                            <div class="pp__c-top d-flex align-items-center justify-content-center">
+                                <div class="pp__cat pp__cat--2">
+                                    <a href="{{products.get_url}}">{{products.product_category}}</a>
+                                </div>
+                            </div>
+                            <h4 class="pp__title pp__title--2">
+                                <a href="{{products.get_url}}">{{products.product_name}}</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- releted products area end -->
+
+</main>
+{% endblock content %}
